@@ -10,19 +10,19 @@ let audioEl = document.querySelector("audio");
 function playVideo(el) {
     videoEl.play();
     playerBtnEl.classList.add("hidden");
+}
 
-    return setTimeout(() => {
-        bg3El.classList.add("visible");
-        audioEl.play();
-        audioEl.volume = 0.3;
+function onVideoEndEvent() {
+    bg3El.classList.add("visible");
+    audioEl.play();
+    audioEl.volume = 0.3;
 
-        braumBtnEl.classList.add("animation");
+    braumBtnEl.classList.add("animation");
 
-        return setInterval(() => {
-            braumBtnEl.classList.remove("animation");
-            braumBtnEl.classList.add("pulseWhite");
-        }, 6400);
-    }, 8800);
+    return setInterval(() => {
+        braumBtnEl.classList.remove("animation");
+        braumBtnEl.classList.add("pulseWhite");
+    }, 6400);
 }
 
 function hiddenButton(el) {
@@ -38,3 +38,5 @@ function pushContainer() {
     audioEl.pause();
     bg4El.classList.add("visible");
 }
+
+videoEl.addEventListener('ended', onVideoEndEvent,false);

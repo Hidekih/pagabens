@@ -14,7 +14,7 @@ function playVideo(el) {
     return setTimeout(() => {
         bg3El.classList.add("visible");
         audioEl.play();
-        audioEl.volume = 0.4;
+        audioEl.volume = 0.3;
 
         braumBtnEl.classList.add("animation");
 

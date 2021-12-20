@@ -134,6 +134,10 @@ button {
     font-size: 0%;
 }
 
+.player-button.hidden {
+    visibility: hidden;
+}
+
 .braum-button {
     display: flex;
     justify-content: center;

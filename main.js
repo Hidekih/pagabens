@@ -9,7 +9,7 @@ let audioEl = document.querySelector("audio");
 // Cuidado, gambiarra abixo
 function playVideo(el) {
     videoEl.play();
-    playerBtnEl.firstElementChild.src = "assets/repeat.svg";
+    playerBtnEl.classList.add("hidden");
 
     return setTimeout(() => {
         bg3El.classList.add("visible");

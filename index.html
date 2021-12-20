@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="icon" href="favicon.webp">
+    <meta name="description" content="Mano q q eu to fazendo" />
+    <meta name="keywords" content="Pagabens" />
+    <meta name="author" content="Alexandre Hideki Siroma" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="favicon.webp">
     <title>Pagabens</title>
     <style>
         * {
@@ -30,9 +34,9 @@
             cursor: pointer;
         }
 
-        @keyframes fromBottom {
-            from {bottom: -30px;}
-            to {bottom: 0;}
+        @keyframes fromLeft {
+            from {left: -45px;}
+            to {left: 0;}
         }
 
         @keyframes fromTop {
@@ -56,7 +60,7 @@
         }
 
         .animation-1 {
-            animation: fromBottom 0.8s;
+            animation: fromLeft 0.8s;
         }
 
         .animation-2 {
@@ -97,7 +101,6 @@
             width: 100vw;
             height: 100vh;
             padding: 1rem;
-            background: rgba(0,0,0,0.4);
         }
 
         @keyframes moveFromLeft {
@@ -116,8 +119,30 @@
             height: 80%;
             right: 1rem;
             left: 1rem;
-            /* background: url('assets/verdanca.webp') center no-repeat; */
-            /* background-size: cover; */
+        }
+
+        .background-3 {
+            visibility: hidden;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            padding: 1rem;
+            background: rgba(0,255,127, 1);
+            background: url('assets/ezdance.gif') center no-repeat;
+            background-size: cover;
+        }
+
+        .background-3.visible {
+            visibility: visible;
+            
+            animation: moveFromLeft 0.8s;
+        }
+
+        .background-3 audio {
+            visibility: hidden;
         }
 
 
@@ -157,7 +182,6 @@
             background: #f9f9f9;
             border: none;
             font-size: 0%;
-            /* padding-left: 4px; */
         }
 
         .button.hidden {
@@ -204,7 +228,7 @@
 <body>
     <div class="background-1"></div>
     <div class="background-2">
-        <video autoplay class="background-3">
+        <video autoplay>
             <source src='assets/se_gosta_de_pipoca.mp4' type="video/mp4">
         </video> 
 
@@ -212,34 +236,42 @@
             <img src="assets/play.svg" alt="Seta para direita">
         </button>
     </div>
-
+    <div class="background-3">
+        <audio autoplay controls loop>
+            <source src="assets/jubileu_theme.mp3" type="audio/mp3">
+        </audio>
+    </div>
 
     <button class="button" onclick="hiddenButton(this)">
-        <span class="animation-1">Feliz</span>
-        <span class="animation-2">
-            aniversário<span class="animation-3">,</span>
-        </span>
-        <span class="animation-4">Verde</span>
+        <span class="animation-1">Feliz aniversário, Verde</span>
 
-        <div class="button-icon">
+        <div class="button-icon animation-4">
             <img src="assets/arrow-right.svg" alt="Seta para direita">
         </div>
     </button>
 
 
     <script>
-        const bgSecondaryEl = document.querySelector(".background-2");
+        const bg2El = document.querySelector(".background-2");
+        const bg3El = document.querySelector(".background-3");
         const playerBtnEl = document.querySelector(".player-button");
         const videoEl = document.querySelector("video");
+        let audioEl = document.querySelector("audio");
 
         function playVideo(el) {
             videoEl?.play();
-            playerBtnEl.firstElementChild.src = "assets/repeat.svg"
+            playerBtnEl.firstElementChild.src = "assets/repeat.svg";
+
+            return setTimeout(() => {
+                bg3El.classList.add("visible");
+                audioEl.play();
+                audioEl.volume = 10;
+            }, 8800);
         }
 
         function hiddenButton(el) {
             el.classList.add("hidden");
-            bgSecondaryEl.classList.add("visible")
+            bg2El.classList.add("visible");
 
             return setTimeout(() => {
                 el.classList.add("removeEl");

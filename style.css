@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+span { position: relative; font-family: Arial, Helvetica, sans-serif; }
+
+button {
+    cursor: pointer;
+}
+
+.animation-1 {
+    animation: fromLeft 0.8s;
+}
+
+.background-1,
+.background-4 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: url('assets/verdanca.webp') center no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.background-4 {
+    visibility: hidden;
+    flex-direction: column;
+    align-items: center !important;
+}
+
+.background-4 p {
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #f9f9f9;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+}
+
+.background-2 {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.background-2.visible {
+    visibility: visible;
+    animation: moveFromLeft 1s;
+}
+
+.background-2 video {
+    width: 90%;
+    height: 90%;
+    border-radius: 2rem !important;
+    overflow: hidden;
+}
+
+.background-3 {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,255,127, 1);
+    background: url('assets/ezdance.gif') center no-repeat;
+    background-size: cover;
+}
+
+.background-3.visible {
+    visibility: visible;
+    animation: moveFromLeft 1s;
+}
+
+.background-3 audio {
+    visibility: hidden;
+}
+
+.background-4.visible {
+    visibility: visible;
+    animation: moveFromLeft 1s;
+}
+
+.button {
+    background: rgba(0,255,127, 1);
+    border-radius: 3rem;
+    margin-bottom: 2rem;
+    border: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    box-shadow: 0 0 0 0px rgba(0,255,127, 1);
+    transform: scale(1);
+    animation: pulse 1.8s infinite;
+    animation-delay: 1s;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+.button:active {
+    animation: none;
+    animation: pulse 1.8s;
+}
+
+.player-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgb(249, 249, 249);
+    border: none;
+    font-size: 0%;
+}
+
+.braum-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    font-size: 0%;
+    margin-right: 4rem;
+
+    box-shadow: 0 0 0 0px rgba(51, 51, 51);
+    transform: scale(1);
+    border-radius: 50%;
+    background: #f9f9f9;
+    border: 2px solid #f9f9f9;
+    border: none;
+    overflow: hidden;
+}
+
+.braum-button img {
+    max-width: 5rem;
+    max-height: 5rem;
+}
+
+.braum-button.animation {
+    animation: braumMove 6.4s;
+}
+
+.braum-button.pulseWhite {
+    animation: pulseWhite 1.4s infinite;
+}
+
+.button.hidden {
+    position: absolute;
+    animation: moveToRight 1s;
+}
+
+.button.removeEl {
+    display: none;
+}
+
+.button-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    border-radius: 50%;
+    background: #f9f9f9;
+}
+
+/* --------- ANIMATIONS --------- */
+
+@keyframes fromLeft {
+    from { left: -45px; }
+    to { left: 0; }
+}
+
+@keyframes moveFromLeft {
+    from { margin-left: -200%; }
+    to { margin-left: 0; }
+}
+
+@keyframes moveToRight {
+    from {transform: translateX(-5%);}
+    to {transform: translateX(300%);}
+}
+
+@keyframes braumMove {
+    from { opacity: 0; margin-right: -120rem; }
+    to { opacity: 1; margin-right: 4rem; }
+}
+
+@keyframes pulseWhite {
+    0% { 
+        transform: scale(1);
+        box-shadow: 0 0 0 0px rgba(51, 51, 51, 0.6);;
+        background: rgba(51, 51, 51);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(51, 51, 51, 0);
+        background: rgba(51, 51, 51);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0px rgba(51, 51, 51, 0);
+        background: rgba(51, 51, 51);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0px rgba(0,255,127, 0.6);
+        background: rgba(0,255,127, 1);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(0,255,127, 0);
+        background: rgba(0,255,127, 1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0px rgba(0,255,127, 00);
+        background: rgba(0,255,127, 1);
+    }
+}

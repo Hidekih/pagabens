@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<!-- Neo, se um dia você ler isso daqui, saiba que você é uma inspiração pra min, obrigado por isso -->
 <head>
     <meta name="description" content="Mano q q eu to fazendo" />
     <meta name="keywords" content="Pagabens" />
@@ -10,274 +11,48 @@
 
     <link rel="icon" href="favicon.webp">
     <title>Pagabens</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            background: #f9f9f9;
-
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            overflow: hidden;
-        }
-
-        span { position: relative; }
-
-        button {
-            cursor: pointer;
-        }
-
-        @keyframes fromLeft {
-            from {left: -45px;}
-            to {left: 0;}
-        }
-
-        @keyframes fromTop {
-            from {top: -30px;}
-            to {top: 0;}
-        }
-
-        @keyframes fromRight {
-            from {right: -45px;}
-            to {right: 0;}
-        }
-
-        @keyframes fromOpacity {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-
-        @keyframes fromBottom-2 {
-            from {bottom: -50px; opacity: 0;}
-            to {bottom: 0; opacity: 1;}
-        }
-
-        .animation-1 {
-            animation: fromLeft 0.8s;
-        }
-
-        .animation-2 {
-            margin-left: 0.5rem;
-            animation: fromTop 0.8s;
-        }
-
-        .animation-3 {
-            position: fixed;
-            animation: fromOpacity 0.8s;
-        }
-
-        .animation-4 {
-            margin-left: 0.5rem;
-            animation: fromRight 0.8s;
-        }
-
-        .animation-5 {
-            /* opacity: 0; */
-            animation: fromBottom-2 1.8s;
-            /* animation-delay: 0.8s; */
-        }
-
-        .background-1 {
-            position: absolute;
-            width: 100vw;
-            height: 100vh;
-            background: url('assets/verdanca.webp') center no-repeat;
-            background-size: cover;
-        }
-
-        .background-2 {
-            visibility: hidden;
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-            padding: 1rem;
-        }
-
-        @keyframes moveFromLeft {
-            from { margin-left: -200%; }
-            to { margin-left: 0; }
-        }
-
-        .background-2.visible {
-            visibility: visible;
-            
-            animation: moveFromLeft 1s;
-        }
-
-        .background-2 video {
-            width: 80%;
-            height: 80%;
-            right: 1rem;
-            left: 1rem;
-        }
-
-        .background-3 {
-            visibility: hidden;
-            position: absolute;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-            padding: 1rem;
-            background: rgba(0,255,127, 1);
-            background: url('assets/ezdance.gif') center no-repeat;
-            background-size: cover;
-        }
-
-        .background-3.visible {
-            visibility: visible;
-            
-            animation: moveFromLeft 0.8s;
-        }
-
-        .background-3 audio {
-            visibility: hidden;
-        }
-
-
-        @keyframes moveToRight {
-            from {transform: translateX(-5%);}
-            to {transform: translateX(300%);}
-        }
-
-        .button {
-            background: rgba(0,255,127, 1);
-            border-radius: 3rem;
-            margin-bottom: 2rem;
-            border: none;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            height: 3rem;
-            box-shadow: 0 0 0 0px rgba(0,255,127, 1);
-            transform: scale(1);
-            animation: pulse 1.8s infinite;
-            animation-delay: 1s;
-            padding: 0.5rem 0.5rem 0.5rem 1rem;
-        }
-
-        .button:active {
-            animation: none;
-            animation: pulse 1.8s;
-        }
-
-        .player-button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            background: #f9f9f9;
-            border: none;
-            font-size: 0%;
-        }
-
-        .button.hidden {
-            position: absolute;
-            animation: moveToRight 1s;
-        }
-
-        .button.removeEl {
-            display: none;
-        }
-
-        .button-icon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 2rem;
-            height: 2rem;
-            margin-left: 1rem;
-            border-radius: 50%;
-            background: #f9f9f9;
-        }
-
-        @keyframes pulse {
-            0% {
-                /* transform: scale(0.95); */
-                box-shadow: 0 0 0 0px rgba(0,255,127, 0.6);
-                background: rgba(0,255,127, 1);
-            }
-
-            70% {
-                /* transform: scale(1); */
-                box-shadow: 0 0 0 10px rgba(0,255,127, 0);
-                background: rgba(0,255,127, 1);
-            }
-
-            100% {
-                /* transform: scale(0.95); */
-                box-shadow: 0 0 0 0px rgba(0,255,127, 00);
-                background: rgba(0,255,127, 1);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background-1"></div>
+    <div class="background-1">
+        <button class="button" onclick="hiddenButton(this)">
+            <span class="animation-1">Feliz aniversário, Verde</span>
+    
+            <div class="button-icon animation-4">
+                <img src="assets/arrow-right.svg" alt="Seta para direita">
+            </div>
+        </button>
+    </div>
+
     <div class="background-2">
-        <video autoplay>
+        <video>
             <source src='assets/se_gosta_de_pipoca.mp4' type="video/mp4">
         </video> 
 
         <button class="player-button" onclick="playVideo(this)">
-            <img src="assets/play.svg" alt="Seta para direita">
+            <img src="assets/play.svg" alt="Ícone de começar">
         </button>
     </div>
+
     <div class="background-3">
         <audio autoplay controls loop>
             <source src="assets/jubileu_theme.mp3" type="audio/mp3">
         </audio>
+
+        <button class="braum-button" onclick="pushContainer(this)">
+            <img src="assets/braum.jpg" alt="Braum">
+        </button>
     </div>
 
-    <button class="button" onclick="hiddenButton(this)">
-        <span class="animation-1">Feliz aniversário, Verde</span>
+    <div class="background-4">
+        <span>Bônus(?)</span>
+        <video controls>
+            <source src='https://thumbs.gfycat.com/JitteryWideeyedBlackrussianterrier-mobile.mp4' type="video/mp4">
+        </video> 
 
-        <div class="button-icon animation-4">
-            <img src="assets/arrow-right.svg" alt="Seta para direita">
-        </div>
-    </button>
+        <p>Quando o programador tenta solucionar um bug</p>
+    </div>
 
-
-    <script>
-        const bg2El = document.querySelector(".background-2");
-        const bg3El = document.querySelector(".background-3");
-        const playerBtnEl = document.querySelector(".player-button");
-        const videoEl = document.querySelector("video");
-        let audioEl = document.querySelector("audio");
-
-        function playVideo(el) {
-            videoEl?.play();
-            playerBtnEl.firstElementChild.src = "assets/repeat.svg";
-
-            return setTimeout(() => {
-                bg3El.classList.add("visible");
-                audioEl.play();
-                audioEl.volume = 10;
-            }, 8800);
-        }
-
-        function hiddenButton(el) {
-            el.classList.add("hidden");
-            bg2El.classList.add("visible");
-
-            return setTimeout(() => {
-                el.classList.add("removeEl");
-            }, 1000);
-        }
-
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

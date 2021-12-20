@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="icon" href="favicon.webp">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagabens</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: #f9f9f9;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        
+        video {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        @keyframes pulse {
+            0% { font-size: 1.5rem; }
+            50% { font-size: 1.55rem; }
+            100% { font-size: 1.5rem; }
+        }
+        
+        button {
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            border: 0;
+            font-family: Arial;
+            font-size: 1.5rem;
+            color: #004020;
+
+            /* animation: pulse 1.6s infinite;
+            animation-delay: 1s; */
+        }
+
+        button:active {
+            animation: none;
+            animation: pulse 1.8s;
+        }
+
+        span { position: relative; }
+
+        @keyframes fromBottom {
+            from {bottom: -30px;}
+            to {bottom: 0;}
+        }
+
+        @keyframes fromTop {
+            from {top: -30px;}
+            to {top: 0;}
+        }
+
+        @keyframes fromRight {
+            from {right: -45px;}
+            to {right: 0;}
+        }
+
+        @keyframes fromOpacity {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes fromBottom-2 {
+            from {bottom: -50px; opacity: 0;}
+            to {bottom: 0; opacity: 1;}
+        }
+
+        .animation-1 {
+            animation: fromBottom 0.8s;
+        }
+
+        .animation-2 {
+            margin-left: 0.5rem;
+            animation: fromTop 0.8s;
+        }
+
+        .animation-3 {
+            position: fixed;
+            animation: fromOpacity 0.8s;
+        }
+
+        .animation-4 {
+            margin-left: 0.5rem;
+            animation: fromRight 0.8s;
+        }
+
+        .animation-5 {
+            /* opacity: 0; */
+            animation: fromBottom-2 1.8s;
+            /* animation-delay: 0.8s; */
+        }
+
+        .pulsate {
+            -webkit-animation: pulsate 2s;
+            -webkit-animation-iteration-count: infinite; 
+            /* box-shadow: 0 0 0 10px rgba(0,255,127, 1); */
+            /* opacity: 0.5; */
+        }
+
+        /* @keyframes pulsate {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0,255,127, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(0,255,127, 1);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0,255,127, 1);
+            }
+        } */
+
+
+
+
+
+        video {
+            background: url('assets/verdanca.webp') center no-repeat;
+            background-size: cover;
+        }
+
+
+
+
+
+
+
+        .button {
+            background: rgba(0,255,127, 1);
+            border-radius: 24px;
+            margin: 12px;
+            display: flex;
+            box-shadow: 0 0 0 0px rgba(0,255,127, 1);
+            transform: scale(1);
+            animation: pulse 1.8s infinite;
+            animation-delay: 1s;
+            padding: 0.5rem;
+        }
+
+        .button-icon {
+          
+        }
+
+        @keyframes pulse {
+            0% {
+                /* transform: scale(0.95); */
+                box-shadow: 0 0 0 0px rgba(0,255,127, 0.6);
+                background: rgba(0,255,127, 1);
+            }
+
+            70% {
+                /* transform: scale(1); */
+                box-shadow: 0 0 0 12px rgba(0,255,127, 0);
+                background: rgba(0,255,127, 1);
+            }
+
+            100% {
+                /* transform: scale(0.95); */
+                box-shadow: 0 0 0 0px rgba(0,255,127, 00);
+                background: rgba(0,255,127, 1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src='https://thumbs.gfycat.com/JitteryWideeyedBlackrussianterrier-mobile.mp4' type="video/mp4">
+    </video>
+    <button class="button">
+          
+            <span class="animation-1">Feliz</span>
+            <span class="animation-2">
+                aniversário<span class="animation-3">, </span>
+            </span>
+            <span class="animation-4"> Verde</span>
+
+            <div class="button-icon">
+                <img src="assets/arrow-right.svg" alt="Seta para direita">
+            </div>
+
+        <!-- <p>
+            <span class="animation-5">
+                Corra bravamente atrás dos seus sonhos!
+            </span>
+        </p> -->
+    </button>
+</body>
+</html>

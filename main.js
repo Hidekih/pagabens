@@ -32,7 +32,7 @@ function hiddenButton(el) {
 }
 
 function onVideoEndEvent() {
-    console.log("Só cuidado pra não tropeçar trazendo café pro chefe")
+    console.log("Só toma cuidado pra não tropeçar trazendo café pro chefe")
 
     bg3El.classList.add("visible");
     audioEl.play();
@@ -44,19 +44,19 @@ function onVideoEndEvent() {
         braumBtnEl.classList.remove("animation");
         braumBtnEl.classList.add("pulseWhite");
 
-        console.log("Pogramar deve ser uma coisa legal")
+        console.log("Programar deve ser uma coisa legal")
     }, 6400);
 }
 
 function pushContainer() {
-    console.log("Sempre tome um tempo para fazer umas besteiras, esse próprio site está sendo uma grande diversão pra min, e é em coisas desse tipo que a gente aprender mais")
+    console.log("Sempre tome um tempo para fazer umas besteiras, esse próprio site está sendo uma grande diversão pra min")
 
     audioEl.pause();
     bg4El.classList.add("visible");
 }
 
 function showBackground5() {
-    console.log("E por fim, feliz aniversário mais uma vez, desejo muita pipoca em sua vida")
+    console.log('Acho que ficou visível que o sono e a preguiça afetou a metade pro fim do site HSAUDHAUSHA')
 
     bg5El.classList.add("visible");
 }
@@ -66,6 +66,6 @@ video2El.onplay = () => {
     return setTimeout(() => {
         lazyBtnEl.classList.add("visible");
 
-        console.log('TOGASHI VOLTA COM HXH PLSSS, QUEREMOS SABER DO GON, DO KILLUA E DO BEANS')
+        console.log("E por fim, feliz aniversário mais uma vez, desejo muita pipoca em sua vida")
     }, 15000);
 }

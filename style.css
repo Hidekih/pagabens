@@ -11,7 +11,9 @@ body {
     overflow: hidden;
 }
 
-span { position: relative; font-family: Arial, Helvetica, sans-serif; }
+span { position: relative }
+
+p, button, span, body, h1, footer { font-family: Arial, Helvetica, sans-serif; }
 
 button {
     cursor: pointer;
@@ -22,7 +24,8 @@ button {
 }
 
 .background-1,
-.background-4 {
+.background-4,
+.background-5 {
     position: absolute;
     width: 100vw;
     height: 100vh;
@@ -35,15 +38,37 @@ button {
     overflow: hidden;
 }
 
-.background-4 {
+.background-4,
+.background-5 {
     visibility: hidden;
     flex-direction: column;
+    justify-content: center;
     align-items: center !important;
+}
+
+.background-5 {
+    justify-content: space-between !important;
+}
+
+.background-5 main {
+    max-width: 60rem;
+    padding: 2rem;
+    background: rgba(0,0,0,0.5);
+    border-radius: 1rem;
+}
+
+.background-5 main p {
+    font-size: 1.4rem;
+    color: #f9f9f9;
+    text-align: center;
+}
+
+.background-5 footer {
+    margin-bottom: 1rem;
 }
 
 .background-4 p {
     font-size: 1.5rem;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
     color: #f9f9f9;
     letter-spacing: 0.5px;
@@ -59,7 +84,6 @@ button {
     width: 100vw;
     height: 100vh;
 }
-
 
 .background-2.visible {
     visibility: visible;
@@ -98,6 +122,24 @@ button {
 .background-4.visible {
     visibility: visible;
     animation: moveFromLeft 1s;
+}
+
+.background-5.visible {
+    visibility: visible;
+    animation: moveFromLeft 1s;
+}
+
+.lazyButton {
+    margin-top: 1rem;
+    visibility: hidden;
+    padding: .5rem;
+    border-radius: 1rem;
+    border: 0;
+    font-weight: 700;
+}
+
+.lazyButton.visible {
+    visibility: visible;
 }
 
 .button {
@@ -187,6 +229,14 @@ button {
     margin-left: 1rem;
     border-radius: 50%;
     background: #f9f9f9;
+}
+
+.button-icon img {
+    margin-left: 3px;
+}
+
+.hiddenMessage {
+    color: #f9f9f9;
 }
 
 /* --------- ANIMATIONS --------- */

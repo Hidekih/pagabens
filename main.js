@@ -25,14 +25,14 @@ function hiddenButton(el) {
     bg2El.classList.add("visible");
 
     return setTimeout(() => {
-        console.log("Mas não desista, nem desanime, vida de programador é uma luta diária")
+        console.log("Mas não desanime, vida de programador é uma luta diária e todo dia é uma novo tropeço")
 
         el.classList.add("removeEl");
     }, 1000);
 }
 
 function onVideoEndEvent() {
-    console.log("A comunidade de programadores é incrível, provavelmente é a área que o pessoal mais gosta de compartilhar conhecimento a troco de nada")
+    console.log("Só cuidado pra não tropeçar trazendo café pro chefe")
 
     bg3El.classList.add("visible");
     audioEl.play();
@@ -44,19 +44,19 @@ function onVideoEndEvent() {
         braumBtnEl.classList.remove("animation");
         braumBtnEl.classList.add("pulseWhite");
 
-        console.log("E lembre-se, se estiver chato programar, vc ta fazendo errado")
+        console.log("Pogramar deve ser uma coisa legal")
     }, 6400);
 }
 
 function pushContainer() {
-    console.log("Sempre tome um tempo para fazer umas brincadeiras, esse próprio site está sendo uma grande diversão pra min, e é em coisas desse tipo que a gente aprender mais")
+    console.log("Sempre tome um tempo para fazer umas besteiras, esse próprio site está sendo uma grande diversão pra min, e é em coisas desse tipo que a gente aprender mais")
 
     audioEl.pause();
     bg4El.classList.add("visible");
 }
 
 function showBackground5() {
-    console.log("E por fim, Feliz aniversário mais uma vez, desejo muita pipoca em sua vida")
+    console.log("E por fim, feliz aniversário mais uma vez, desejo muita pipoca em sua vida")
 
     bg5El.classList.add("visible");
 }
@@ -65,5 +65,7 @@ video1El.addEventListener('ended', onVideoEndEvent, false);
 video2El.onplay = () => {
     return setTimeout(() => {
         lazyBtnEl.classList.add("visible");
+
+        console.log('TOGASHI VOLTA COM HXH PLSSS, QUEREMOS SABER DO GON, DO KILLUA E DO BEANS')
     }, 15000);
 }

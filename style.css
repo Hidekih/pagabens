@@ -53,7 +53,7 @@ button {
 .background-5 main {
     max-width: 60rem;
     padding: 2rem;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.6);
     border-radius: 1rem;
 }
 
@@ -65,6 +65,7 @@ button {
 
 .background-5 footer {
     margin-bottom: 1rem;
+    font-size: 0.7rem;
 }
 
 .background-4 p {

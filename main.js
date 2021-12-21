@@ -67,5 +67,5 @@ video2El.onplay = () => {
         lazyBtnEl.classList.add("visible");
 
         console.log("E por fim, feliz aniversário mais uma vez, desejo muita pipoca em sua vida")
-    }, 15000);
+    }, 11000);
 }

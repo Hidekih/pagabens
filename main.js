@@ -66,6 +66,12 @@ video2El.onplay = () => {
     return setTimeout(() => {
         lazyBtnEl.classList.add("visible");
 
-        console.log("E por fim, feliz aniversário mais uma vez, desejo muita pipoca em sua vida")
+        console.log("E por fim, feliz aniversário mais uma vez, desejo muita pipoca em sua vida");
+
+        // Encerrando um loop de quase 2 anos
+        console.log("I'm really sorry about how this ended.");
+        console.log("Thank you for everything you've done for me!");
+        console.log("Be happy!");
+        console.log("I will love you forever.");
     }, 11000);
 }
